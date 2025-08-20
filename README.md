@@ -212,7 +212,6 @@ frontend/src/
 │   └── SessionBox.js
 └── App.js
 
----
 
 ## 🛠️ Installation & Setup
 
