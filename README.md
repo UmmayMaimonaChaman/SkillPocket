@@ -164,56 +164,52 @@ A comprehensive skill exchange platform with full user management capabilities, 
 
 backend/
 ├── controllers/
-│ ├── adminController.js
-│ ├── adminAuthController.js
-│ ├── authController.js
-│ ├── userController.js
-│ ├── skillController.js
-│ ├── requestController.js
-│ ├── sessionController.js
-│ └── reviewController.js
+│   ├── adminController.js
+│   ├── adminAuthController.js
+│   ├── authController.js
+│   ├── userController.js
+│   ├── skillController.js
+│   ├── requestController.js
+│   ├── sessionController.js
+│   └── reviewController.js
 ├── middleware/
-│ ├── auth.js
-│ └── admin.js
+│   ├── auth.js
+│   └── admin.js
 ├── models/
-│ ├── User.js
-│ ├── Skill.js
-│ ├── Request.js
-│ ├── Session.js
-│ └── Review.js
+│   ├── User.js
+│   ├── Skill.js
+│   ├── Request.js
+│   ├── Session.js
+│   └── Review.js
 ├── routes/
-│ ├── admin.js
-│ ├── adminAuth.js
-│ ├── auth.js
-│ ├── user.js
-│ ├── skill.js
-│ ├── request.js
-│ ├── session.js
-│ └── review.js
+│   ├── admin.js
+│   ├── adminAuth.js
+│   ├── auth.js
+│   ├── user.js
+│   ├── skill.js
+│   ├── request.js
+│   ├── session.js
+│   └── review.js
 └── scripts/
-├── createAdminUser.js
-└── createUsers.js
-
-shell
-Copy
-Edit
+    ├── createAdminUser.js
+    └── createUsers.js
 
 ## Frontend (React)
 
 frontend/src/
 ├── pages/
-│ ├── AdminDashboard.js
-│ ├── AdminLogin.js
-│ ├── UserDashboard.js
-│ ├── Login.js
-│ ├── Register.js
-│ ├── SessionPage.js
-│ └── ReviewPage.js
+│   ├── AdminDashboard.js
+│   ├── AdminLogin.js
+│   ├── UserDashboard.js
+│   ├── Login.js
+│   ├── Register.js
+│   ├── SessionPage.js
+│   └── ReviewPage.js
 ├── components/
-│ ├── Navbar.js
-│ ├── SkillBox.js
-│ ├── RequestBox.js
-│ └── SessionBox.js
+│   ├── Navbar.js
+│   ├── SkillBox.js
+│   ├── RequestBox.js
+│   └── SessionBox.js
 └── App.js
 
 ---
