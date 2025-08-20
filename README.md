@@ -213,49 +213,6 @@ frontend/src/
 └── App.js
 
 
-## 🛠️ Installation & Setup
-
-### Prerequisites
-- Node.js (v14+)  
-- MongoDB  
-- npm or yarn  
-
-### Backend Setup
-```bash
-cd backend
-npm install
-Create .env:
-
-env
-Copy
-Edit
-MONGO_URI=mongodb://localhost:27017/skillswap
-JWT_SECRET=your_jwt_secret_key_here
-PORT=5001
-Frontend Setup
-bash
-Copy
-Edit
-cd frontend
-npm install
-Database Setup
-bash
-Copy
-Edit
-cd backend
-node scripts/createAdminUser.js
-node scripts/createUsers.js
-Run Application
-bash
-Copy
-Edit
-# Backend
-cd backend
-npm start
-
-# Frontend
-cd frontend
-npm start
 🔐 Security Features
 Password hashing (bcrypt)
 
@@ -273,6 +230,47 @@ Mobile-first approach
 Touch-friendly interfaces
 
 Adaptive navigation and dashboards
+
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- Node.js (v14+)  
+- MongoDB  
+- npm or yarn  
+
+### Backend Setup
+```bash
+cd backend
+npm install
+Create .env:
+
+MONGO_URI=your_url
+JWT_SECRET=your_jwt_secret_key_here
+PORT=5001
+Frontend Setup
+bash
+Copy
+Edit
+cd frontend
+npm install
+Database Setup
+bash
+Copy
+Edit
+cd backend
+node scripts/createAdminUser.js
+node scripts/createUsers.js
+Run Application
+
+# Backend
+cd backend
+npm start
+
+# Frontend
+cd frontend
+npm start
+```` ``` ```` 
 
 ⚠️ Ownership
 Owner: Ummay Maimona Chaman
