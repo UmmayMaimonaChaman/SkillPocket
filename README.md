@@ -1,4 +1,5 @@
-# SkillSwap Hub – User & Skill Management System
+# SkillPocket – User & Skill Management System
+Swap a skill, light a mind :)
 
 > **Owner:** Ummay Maimona Chaman  
 > **Note:** Do **not** use or copy this project without explicit permission from the owner.
