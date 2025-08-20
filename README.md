@@ -1,227 +1,278 @@
-# SkillSwap Hub - User Management System
+# SkillSwap Hub – User & Skill Management System
 
-A comprehensive skill exchange platform with full user management capabilities, built with React frontend and Node.js backend following MVC architecture.
+> **Owner:** Ummay Maimona Chaman  
+> **Note:** Do **not** use or copy this project without explicit permission from the owner.
+
+A comprehensive skill exchange platform with full user management capabilities, built with **React frontend** and **Node.js backend** following **MVC architecture**. This system allows users to learn and teach skills, schedule sessions, give feedback, and manage requests efficiently.
+
+---
 
 ## 🚀 Features
 
-### Admin Features
-- **Complete CRUD Operations**: Create, Read, Update, Delete users
-- **User Management Dashboard**: Modern interface with statistics
-- **User Banning/Unbanning**: Toggle user account status
-- **Role Management**: Assign admin or user roles
-- **Real-time Statistics**: View total users, admins, banned users, etc.
+### 1. Authentication
+**Functional Features:**
+- User & Admin registration and login  
+- JWT-based authentication  
+- Role-based access control (Admin/User)  
 
-### User Features
-- **User Authentication**: Sign up, sign in, logout
-- **Profile Management**: Edit profile information and change password
-- **User Dashboard**: Personal dashboard with quick actions
-- **Skill Management**: Create, view, and manage skills
-- **Request Management**: Handle skill exchange requests
-- **Session Tracking**: Monitor learning sessions
+**Non-Functional Features:**
+- Secure password hashing (bcrypt)  
+- Token expiration after 7 days  
+- Input validation and XSS protection  
+
+---
+
+### 2. Users
+**Functional Features:**
+- View and update profile  
+- Change password  
+- Personal dashboard for quick actions  
+
+**Non-Functional Features:**
+- Responsive dashboard  
+- Mobile-friendly layout  
+- Minimal latency for profile updates  
+
+---
+
+### 3. Admin
+**Functional Features:**
+- CRUD operations on all users  
+- Ban/unban users  
+- Assign roles (Admin/User)  
+- Admin dashboard with user statistics  
+
+**Non-Functional Features:**
+- Secure access control for admin routes  
+- Real-time status updates  
+- Data aggregation for dashboard metrics  
+
+---
+
+### 4. Skills
+**Functional Features:**
+- Create, view, update, delete skills  
+- View all skills in the platform  
+- Manage user’s own skills  
+
+**Non-Functional Features:**
+- Fast database queries  
+- Validation of skill names  
+- User-friendly skill management UI  
+
+---
+
+### 5. Requests
+**Functional Features:**
+- Send/receive skill learning requests  
+- Accept or reject requests  
+- Track request status  
+
+**Non-Functional Features:**
+- Real-time request updates  
+- Clear status indicators  
+- Notification on request status changes  
+
+---
+
+### 6. Sessions
+**Functional Features:**
+- Schedule sessions after request acceptance  
+- Set session date, time, skill name, and message  
+- Mark session as done  
+
+**Non-Functional Features:**
+- Calendar integration for date selection  
+- Responsive session box UI  
+- Secure session access for intended users only  
+
+---
+
+### 7. Reviews
+**Functional Features:**
+- Provide rating (1–5) after session completion  
+- Add suggestions or feedback  
+- View ratings summary  
+
+**Non-Functional Features:**
+- Real-time update of ratings  
+- Aggregate ratings per user  
+- Intuitive review interface  
+
+---
+
+### 8. Notifications
+**Functional Features:**
+- Alert users about request status  
+- Notify session creation or changes  
+- Inform users of review availability  
+
+**Non-Functional Features:**
+- Non-intrusive, clear alerts  
+- Mobile-friendly notifications  
+- Efficient real-time update system  
+
+---
+
+### 9. Ratings Summary
+**Functional Features:**
+- Dashboard to view given and received ratings  
+- Sort by skill, user, or session  
+- Display average rating per user  
+
+**Non-Functional Features:**
+- Fast aggregation of rating data  
+- Secure access to ratings only for relevant users  
+- Responsive chart and list views  
+
+---
+
+### 10. Navigation & UI Components
+**Functional Features:**
+- Dynamic navbar based on user role  
+- Modals for CRUD operations  
+- Session creation box, review box, and dashboards  
+
+**Non-Functional Features:**
+- Mobile-first design  
+- Responsive layouts for all devices  
+- Minimal latency, smooth interactions  
+
+---
 
 ## 👥 User Accounts
 
-### Admin Account
-- **Email**: `chamanmaimona@gmail.com`
-- **Password**: `Chaman@5204`
-- **Name**: Ummay Maimona Chaman
-- **Role**: Admin
+**Admin Account:**  
+- Email: `chamanmaimona@gmail.com`  
+- Password: `Chaman@5204`  
+- Name: Ummay Maimona Chaman  
 
-### Regular User Accounts
-1. **Nazifa Prova**
-   - Email: `nazifaprova@gmail.com`
-   - Password: `PROVAtoxic`
+**Regular Users:**  
+1. Nazifa Prova – `nazifaprova@gmail.com` / `PROVAtoxic`  
+2. Taznia Onon – `tazniaonon@gmail.com` / `ONONgoru`  
+3. Rizve Ahmed – `rizveahmed@gmail.com` / `RIZVEgondar`  
+4. Jubaida – `jubaida@gmail.com` / `JUBAIDAcat`  
 
-2. **Taznia Onon**
-   - Email: `tazniaonon@gmail.com`
-   - Password: `ONONgoru`
-
-3. **Rizve Ahmed**
-   - Email: `rizveahmed@gmail.com`
-   - Password: `RIZVEgondar`
-
-4. **Jubaida**
-   - Email: `jubaida@gmail.com`
-   - Password: `JUBAIDAcat`
+---
 
 ## 🏗️ Architecture
 
 ### Backend (Node.js + Express)
-```
 backend/
 ├── controllers/
-│   ├── adminController.js      # Admin CRUD operations
-│   ├── adminAuthController.js  # Admin authentication
-│   ├── authController.js       # User authentication
-│   └── userController.js       # User operations
+│ ├── adminController.js
+│ ├── adminAuthController.js
+│ ├── authController.js
+│ ├── userController.js
+│ ├── skillController.js
+│ ├── requestController.js
+│ ├── sessionController.js
+│ └── reviewController.js
 ├── middleware/
-│   ├── auth.js                 # JWT authentication
-│   └── admin.js                # Admin authorization
+│ ├── auth.js
+│ └── admin.js
 ├── models/
-│   └── User.js                 # User data model
+│ ├── User.js
+│ ├── Skill.js
+│ ├── Request.js
+│ ├── Session.js
+│ └── Review.js
 ├── routes/
-│   ├── admin.js                # Admin API routes
-│   ├── adminAuth.js            # Admin auth routes
-│   ├── auth.js                 # User auth routes
-│   └── user.js                 # User API routes
+│ ├── admin.js
+│ ├── adminAuth.js
+│ ├── auth.js
+│ ├── user.js
+│ ├── skill.js
+│ ├── request.js
+│ ├── session.js
+│ └── review.js
 └── scripts/
-    ├── createAdminUser.js      # Admin user creation
-    └── createUsers.js          # Regular users creation
-```
+├── createAdminUser.js
+└── createUsers.js
+
 
 ### Frontend (React)
-```
+
+
 frontend/src/
 ├── pages/
-│   ├── AdminDashboard.js       # Admin management interface
-│   ├── AdminLogin.js           # Admin login page
-│   ├── UserDashboard.js        # User dashboard
-│   ├── Login.js                # User login
-│   └── Register.js             # User registration
+│ ├── AdminDashboard.js
+│ ├── AdminLogin.js
+│ ├── UserDashboard.js
+│ ├── Login.js
+│ ├── Register.js
+│ ├── SessionPage.js
+│ └── ReviewPage.js
 ├── components/
-│   └── Navbar.js               # Navigation component
-└── App.js                      # Main application router
-```
+│ ├── Navbar.js
+│ ├── SkillBox.js
+│ ├── RequestBox.js
+│ └── SessionBox.js
+└── App.js
+
+---
 
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB
-- npm or yarn
+- Node.js (v14+)  
+- MongoDB  
+- npm or yarn  
 
 ### Backend Setup
 ```bash
 cd backend
 npm install
-```
+Create .env:
 
-Create a `.env` file in the backend directory:
-```env
+env
+Copy
+Edit
 MONGO_URI=mongodb://localhost:27017/skillswap
 JWT_SECRET=your_jwt_secret_key_here
 PORT=5001
-```
-
-### Frontend Setup
-```bash
+Frontend Setup
+bash
+Copy
+Edit
 cd frontend
 npm install
-```
-
-### Database Setup
-```bash
-# Create admin user
+Database Setup
+bash
+Copy
+Edit
 cd backend
 node scripts/createAdminUser.js
-
-# Create regular users
 node scripts/createUsers.js
-```
-
-### Running the Application
-```bash
-# Start backend server
+Run Application
+bash
+Copy
+Edit
+# Backend
 cd backend
 npm start
 
-# Start frontend (in new terminal)
+# Frontend
 cd frontend
 npm start
-```
+🔐 Security Features
+Password hashing (bcrypt)
 
-## 🔐 Authentication & Authorization
+JWT token authentication
 
-### JWT Token System
-- Tokens expire after 7 days
-- Admin tokens include `isAdmin: true` flag
-- User tokens include role information
+Role-based authorization
 
-### Middleware Protection
-- `auth.js`: Protects routes requiring authentication
-- `admin.js`: Protects admin-only routes
+Input validation & XSS protection
 
-## 📊 API Endpoints
+CORS configuration
 
-### Admin Routes
-- `GET /api/admin/dashboard-stats` - Get dashboard statistics
-- `GET /api/admin/users` - Get all users
-- `GET /api/admin/users/:id` - Get specific user
-- `POST /api/admin/users` - Create new user
-- `PUT /api/admin/users/:id` - Update user
-- `DELETE /api/admin/users/:id` - Delete user
-- `PUT /api/admin/users/:id/toggle-ban` - Ban/unban user
+📱 Responsive Design
+Mobile-first approach
 
-### User Routes
-- `GET /api/user/profile` - Get user profile
-- `PUT /api/user/profile` - Update user profile
+Touch-friendly interfaces
 
-### Authentication Routes
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/admin-auth/login` - Admin login
+Adaptive navigation and dashboards
 
-## 🎨 UI/UX Features
-
-### Admin Dashboard
-- Modern gradient design
-- Responsive statistics cards
-- Interactive user table
-- Modal forms for CRUD operations
-- Real-time status indicators
-
-### User Dashboard
-- Clean profile display
-- Editable profile form
-- Quick action cards
-- Password change functionality
-- Status indicators
-
-### Navigation
-- Dynamic navigation based on user role
-- Responsive mobile menu
-- Role-based access control
-
-## 🔒 Security Features
-
-- Password hashing with bcrypt
-- JWT token authentication
-- Role-based authorization
-- Input validation
-- XSS protection
-- CORS configuration
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Responsive grid layouts
-- Touch-friendly interfaces
-- Adaptive navigation
-
-## 🚀 Getting Started
-
-1. **Clone the repository**
-2. **Set up the database and environment variables**
-3. **Run the setup scripts to create users**
-4. **Start both backend and frontend servers**
-5. **Access the application at `http://localhost:3000`**
-
-### Admin Access
-- Navigate to `/admin/login`
-- Use admin credentials to access the dashboard
-
-### User Access
-- Navigate to `/login` or `/register`
-- Use any of the provided user credentials
-
-## 🤝 Contributing
-
-This system follows MVC architecture and best practices for:
-- Code organization
-- Security implementation
-- User experience design
-- API design patterns
-
-## 📄 License
-
-This project is created for educational and demonstration purposes.
+⚠️ Ownership
+Owner: Ummay Maimona Chaman
+This repository and code cannot be copied, shared, or used without explicit permission.
