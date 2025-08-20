@@ -158,7 +158,10 @@ A comprehensive skill exchange platform with full user management capabilities, 
 
 ## 🏗️ Architecture
 
-### Backend (Node.js + Express)
+# Project Structure
+
+## Backend (Node.js + Express)
+
 backend/
 ├── controllers/
 │ ├── adminController.js
@@ -191,9 +194,11 @@ backend/
 ├── createAdminUser.js
 └── createUsers.js
 
+shell
+Copy
+Edit
 
-### Frontend (React)
-
+## Frontend (React)
 
 frontend/src/
 ├── pages/
